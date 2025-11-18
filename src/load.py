@@ -1,4 +1,3 @@
-# load.py
 import pandas as pd
 import psycopg2
 from logs.utils import logger

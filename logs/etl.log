@@ -235,3 +235,6 @@
 2025-11-18 09:49:47,343 - INFO - Loaded 2011 cleaned rows into PostgreSQL
 2025-11-18 09:49:47,535 - INFO - Loaded 1265 rejected rows into PostgreSQL
 2025-11-18 09:49:47,536 - INFO - Data successfully loaded into PostgreSQL.
+2025-11-18 10:55:12,084 - INFO - Logger initialized.
+2025-11-18 10:56:14,887 - INFO - Logger initialized.
+2025-11-18 10:57:27,704 - INFO - Logger initialized.
