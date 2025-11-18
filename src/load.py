@@ -3,11 +3,6 @@ import psycopg2
 from logs.utils import logger
 
 def load_data(cleaned_rows, rejected_rows=None):
-    """
-    Load cleaned and rejected water potability data into PostgreSQL.
-    cleaned_rows: pandas DataFrame with cleaned data (must not be None)
-    rejected_rows: pandas DataFrame with rejected rows (optional)
-    """
 
     if cleaned_rows is None or cleaned_rows.empty:
         logger.error("No cleaned data provided to load into PostgreSQL")
