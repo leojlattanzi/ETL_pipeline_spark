@@ -36,7 +36,6 @@ ETL_pipeline/
 │   └── rejected_rows.csv
 ├── main.py                # Runs the ETL pipeline
 ├── README.md
-├── requirements.txt
 ```
 
 ---
@@ -60,17 +59,12 @@ ETL_pipeline/
 ## Prerequisites
 
 * Python 3.10+
-* PostgreSQL 15+ (or compatible version)
-* Python packages: see `requirements.txt`
-
-Example `requirements.txt`:
-
-```
-pandas
-psycopg2-binary
-```
-
----
+* PostgreSQL 18+ (or compatible version)
+* Python packages: 
+   -Pandas
+   -Psycopg2
+   -Pytest     #------Testing Libraries
+   -Magic Mock #---/
 
 ## Setup
 
@@ -206,7 +200,5 @@ All ETL steps are logged using `logs/utils.py`. Logs include:
 
 ## Future Improvements
 
-* Bulk insert using `executemany` or PostgreSQL `COPY` for faster loading
-* Add unit tests for each ETL stage
 * Add command-line arguments for flexible file paths and database credentials
-* Add more advanced data validation r
+* Add more advanced data validation
