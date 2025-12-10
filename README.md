@@ -167,7 +167,7 @@ python main.py
 
 | Column          | Type               |
 | --------------- | ------------------ |
-| id              | SERIAL PRIMARY KEY |
+| id              | INT PRIMARY KEY |
 | ph              | FLOAT              |
 | hardness        | FLOAT              |
 | solids          | FLOAT              |

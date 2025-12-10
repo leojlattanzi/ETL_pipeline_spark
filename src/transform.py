@@ -10,11 +10,7 @@ def transform_data(df: pd.DataFrame):
 
     # rejected rows
     rejects = pd.DataFrame(columns=df.columns)
-
-    # Convert binary input (0,1) into boolean (False, True)
    
-
-
     # remove missing values
     initial_rows = len(df)
     missing_rows = df[df.isnull().any(axis=1)]

@@ -17,9 +17,8 @@ pytest>=9.0
 #python3 -m venv venv
 
 """Activate venv"""
-#------------------------
 
 #source venv/bin/activate
-
+#-----------------------
 """ Install Dependancies """ 
 #pip install -r requirements.txt

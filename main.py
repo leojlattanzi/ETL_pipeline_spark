@@ -25,11 +25,11 @@ else:
 # save cleaned and rejected .to_csv
 if cleaned is not None and not cleaned.empty:
     cleaned.index.name = "id"
-    cleaned.to_csv("output/cleaned_rows.csv", index_label="Id")
+    cleaned.to_csv("output/cleaned_rows.csv", index_label="id")
     logger.info(f"Saved {len(cleaned)} cleaned rows to output/cleaned_rows.csv")
 
 if rejects is not None and not rejects.empty:
-    rejects.to_csv("output/rejected_rows.csv", index_label="Id")
+    rejects.to_csv("output/rejected_rows.csv", index_label="id")
     logger.info(f"Saved {len(rejects)} rejected rows to output/rejected_rows.csv")
 
 #load data into postgres
