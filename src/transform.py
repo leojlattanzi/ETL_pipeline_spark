@@ -1,48 +1,69 @@
-import pandas as pd
+from pyspark.sql import functions as F
 from logs.utils import logger
 
-def transform_data(df: pd.DataFrame):
-    if df is None:
-        logger.error("No DataFrame provided for transformation")
-        return None, None
+def transform_data(df):
+    total_rows = df.count()
+    logger.info(f"Starting transformation on {total_rows} rows")
 
-    logger.info(f"Starting transformation on {len(df)} rows")
-
-    # rejected rows
-    rejects = pd.DataFrame(columns=df.columns)
-   
     # remove missing values
-    initial_rows = len(df)
-    missing_rows = df[df.isnull().any(axis=1)]
-    rejects = pd.concat([rejects, missing_rows])
-    df = df.dropna()
-    logger.info(f"Dropped {len(missing_rows)} rows with missing values")
+    
+    not_null = None
+    for col in df.columns:
+        c = F.col(col).isNotNull()
+        not_null = c if not_null is None else not_null & c
 
-    # Remove duplicate rows
-    initial_rows = len(df)
-    duplicate_rows = df[df.duplicated()]
-    rejects = pd.concat([rejects, duplicate_rows])
-    df = df.drop_duplicates()
-    logger.info(f"Dropped {len(duplicate_rows)} duplicate rows")
+    missing_df = (
+        df.filter(~not_null)
+        .withColumn("reject_reason", F.lit("MISSING_VALUE"))
+    )
 
-    # Basic numeric validation (no negative values)
-    numeric_columns = df.select_dtypes(include=['float64', 'int64']).columns
-    for col in numeric_columns:
-        invalid_rows = df[df[col] < 0]
-        if not invalid_rows.empty:
-            rejects = pd.concat([rejects, invalid_rows])
-            df = df[df[col] >= 0]
-            logger.info(f"Dropped {len(invalid_rows)} rows with invalid {col} < 0")
+    cleaned_df = df.filter(not_null)
 
-    # Standardize column names
-    df.columns = [str(col).strip().lower() for col in df.columns]
+    logger.info(f"Removed {missing_df.count()} Missing Values")
 
-    # Standardize columns
-    string_cols = df.select_dtypes(include='object').columns
-    for col in string_cols:
-        df[col] = df[col].str.strip().str.lower()
+    
+    # De-Dupe
 
-    logger.info(f"Transformation complete. {len(df)} rows remaining")
-    logger.info(f"Total rejected rows: {len(rejects)}")
+    dedup_df = cleaned_df.dropDuplicates()
+    duplicate_df = (
+        cleaned_df.subtract(dedup_df)
+        .withColumn("reject_reason", F.lit("DUPLICATE"))
+    )
 
-    return df, rejects
+    cleaned_df = dedup_df
+
+    logger.info(f"Removed {duplicate_df.count()} Duped values")
+
+
+    # validation (no negative #s)
+
+    numeric_cols = [
+        f.name for f in cleaned_df.schema.fields
+        if f.dataType.simpleString() in ["int", "double"]
+    ]
+
+    valid_condition = None
+    for col in numeric_cols:
+        c = F.col(col) >= 0
+        valid_condition = c if valid_condition is None else valid_condition & c
+
+    negative_df = (
+        cleaned_df.filter(~valid_condition)
+        .withColumn("reject_reason", F.lit("NEGATIVE_VALUE"))
+    )
+
+    cleaned_df = cleaned_df.filter(valid_condition)
+
+    logger.info(f"Validated {df.count()} Rows")
+
+    #rejected data
+    rejected_df = (
+        missing_df
+        .unionByName(duplicate_df, allowMissingColumns=True)
+        .unionByName(negative_df, allowMissingColumns=True)
+    )
+
+    logger.info(f"Cleaned rows: {cleaned_df.count()}")
+    logger.info(f"Rejected rows: {rejected_df.count()}")
+
+    return cleaned_df, rejected_df

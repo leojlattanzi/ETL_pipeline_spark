@@ -1,0 +1,96 @@
+2025-12-16 08:56:43,818 - INFO - Logger initialized.
+2025-12-16 08:56:43,832 - INFO - ETL pipeline started
+2025-12-16 08:56:53,500 - INFO - Extracted 3276 rows
+2025-12-16 08:56:53,618 - INFO - Starting transformation on 3276 rows
+2025-12-16 08:56:54,864 - INFO - Cleaned rows: 2011
+2025-12-16 08:56:56,016 - INFO - Rejected rows: 1265
+2025-12-16 08:56:57,033 - INFO - Loaded data into water_potability_cleaned
+2025-12-16 08:56:58,055 - INFO - Loaded data into water_potability_rejected
+2025-12-16 08:56:58,055 - INFO - ETL pipeline completed successfully
+2025-12-16 09:41:05,674 - INFO - Logger initialized.
+2025-12-16 09:41:05,701 - INFO - ETL pipeline started
+2025-12-16 09:41:18,630 - INFO - Extracted 3276 rows
+2025-12-16 09:41:18,761 - INFO - Starting transformation on 3276 rows
+2025-12-16 09:41:20,027 - INFO - Cleaned rows: 2011
+2025-12-16 09:41:21,096 - INFO - Rejected rows: 1265
+2025-12-16 09:41:22,140 - INFO - Loaded data into water_potability_cleaned
+2025-12-16 09:41:23,041 - INFO - Loaded data into water_potability_rejected
+2025-12-16 09:41:23,042 - INFO - ETL pipeline completed successfully
+2025-12-16 10:21:17,841 - INFO - Logger initialized.
+2025-12-16 10:21:17,843 - INFO - ETL pipeline started
+2025-12-16 10:21:27,982 - INFO - Extracted 3276 rows
+2025-12-16 10:21:28,111 - INFO - Starting transformation on 3276 rows
+2025-12-16 10:21:29,409 - INFO - Cleaned rows: 2011
+2025-12-16 10:21:30,464 - INFO - Rejected rows: 1265
+2025-12-16 10:21:31,507 - INFO - Loaded data into water_potability_cleaned
+2025-12-16 10:21:32,395 - INFO - Loaded data into water_potability_rejected
+2025-12-16 10:21:32,395 - INFO - ETL pipeline completed successfully
+2025-12-16 10:37:47,198 - INFO - Logger initialized.
+2025-12-16 10:37:47,201 - INFO - ETL pipeline started
+2025-12-16 10:37:57,168 - INFO - Extracted 3276 rows
+2025-12-16 10:37:57,281 - INFO - Starting transformation on 3276 rows
+2025-12-16 10:37:58,494 - INFO - Cleaned rows: 2011
+2025-12-16 10:37:59,554 - INFO - Rejected rows: 1265
+2025-12-16 10:38:00,724 - INFO - Loaded data into water_potability_cleaned
+2025-12-16 10:38:01,519 - INFO - Loaded data into water_potability_rejected
+2025-12-16 10:38:01,519 - INFO - ETL pipeline completed successfully
+2025-12-16 10:52:38,966 - INFO - Logger initialized.
+2025-12-16 10:52:38,971 - INFO - ETL pipeline started
+2025-12-16 10:52:48,860 - INFO - Extracted 3276 rows
+2025-12-16 10:52:48,989 - INFO - Starting transformation on 3276 rows
+2025-12-16 10:52:49,148 - INFO - Removed Missing Values
+2025-12-16 10:52:49,176 - INFO - Removed Duped values
+2025-12-16 10:52:49,277 - INFO - Validated Data
+2025-12-16 10:52:50,242 - INFO - Cleaned rows: 2011
+2025-12-16 10:52:51,418 - INFO - Rejected rows: 1265
+2025-12-16 10:52:52,444 - INFO - Loaded data into water_potability_cleaned
+2025-12-16 10:52:53,266 - INFO - Loaded data into water_potability_rejected
+2025-12-16 10:52:53,266 - INFO - ETL pipeline completed successfully
+2025-12-16 10:54:52,409 - INFO - Logger initialized.
+2025-12-16 10:54:52,413 - INFO - ETL pipeline started
+2025-12-16 10:55:02,428 - INFO - Extracted 3276 rows
+2025-12-16 10:55:02,572 - INFO - Starting transformation on 3276 rows
+2025-12-16 10:55:03,031 - INFO - Removed 1265 Missing Values
+2025-12-16 10:55:03,056 - INFO - Removed Duped values
+2025-12-16 10:55:03,145 - INFO - Validated Data
+2025-12-16 10:55:04,031 - INFO - Cleaned rows: 2011
+2025-12-16 10:55:05,328 - INFO - Rejected rows: 1265
+2025-12-16 10:55:06,525 - INFO - Loaded data into water_potability_cleaned
+2025-12-16 10:55:07,616 - INFO - Loaded data into water_potability_rejected
+2025-12-16 10:55:07,616 - INFO - ETL pipeline completed successfully
+2025-12-16 10:56:35,065 - INFO - Logger initialized.
+2025-12-16 10:56:35,079 - INFO - ETL pipeline started
+2025-12-16 10:56:44,952 - INFO - Extracted 3276 rows
+2025-12-16 10:56:45,055 - INFO - Starting transformation on 3276 rows
+2025-12-16 10:56:45,458 - INFO - Removed 1265 Missing Values
+2025-12-16 10:56:46,571 - INFO - Removed 0 Duped values
+2025-12-16 10:56:46,737 - INFO - Validated 3276 Rows
+2025-12-16 10:56:47,276 - INFO - Cleaned rows: 2011
+2025-12-16 10:56:47,970 - INFO - Rejected rows: 1265
+2025-12-16 10:56:48,754 - INFO - Loaded data into water_potability_cleaned
+2025-12-16 10:56:49,482 - INFO - Loaded data into water_potability_rejected
+2025-12-16 10:56:49,482 - INFO - ETL pipeline completed successfully
+2025-12-16 12:15:55,475 - INFO - Logger initialized.
+2025-12-16 12:15:55,508 - INFO - ETL pipeline started
+2025-12-16 12:16:17,836 - INFO - Extracted 3276 rows
+2025-12-16 12:16:18,049 - INFO - Starting transformation on 3276 rows
+2025-12-16 12:16:18,851 - INFO - Removed 1265 Missing Values
+2025-12-16 12:16:21,143 - INFO - Removed 0 Duped values
+2025-12-16 12:16:21,411 - INFO - Validated 3276 Rows
+2025-12-16 12:16:22,407 - INFO - Cleaned rows: 2011
+2025-12-16 12:16:23,716 - INFO - Rejected rows: 1265
+2025-12-16 12:16:25,243 - INFO - Loaded data into water_potability_cleaned
+2025-12-16 12:16:26,670 - INFO - Loaded data into water_potability_rejected
+2025-12-16 12:16:26,671 - INFO - ETL pipeline completed successfully
+2025-12-16 12:20:04,793 - INFO - Logger initialized.
+2025-12-16 12:20:04,796 - INFO - ETL pipeline started
+2025-12-16 12:20:23,776 - INFO - Extracted 3276 rows
+2025-12-16 12:20:24,021 - INFO - Starting transformation on 3276 rows
+2025-12-16 12:20:24,838 - INFO - Removed 1265 Missing Values
+2025-12-16 12:20:27,027 - INFO - Removed 0 Duped values
+2025-12-16 12:20:27,326 - INFO - Validated 3276 Rows
+2025-12-16 12:20:28,282 - INFO - Cleaned rows: 2011
+2025-12-16 12:20:29,525 - INFO - Rejected rows: 1265
+2025-12-16 12:20:31,213 - INFO - Loaded data into water_potability_cleaned
+2025-12-16 12:20:32,515 - INFO - Loaded data into water_potability_rejected
+2025-12-16 12:20:32,516 - INFO - ETL pipeline completed successfully
